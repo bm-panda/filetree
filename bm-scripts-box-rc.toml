@@ -1,0 +1,26 @@
+[bmscriptsbox]
+
+[bmscriptsbox.info]
+id = "d21411e8-f400-4853-a3a4-05e66deabdda"
+name = "文件树生成"
+desc = "自动扫描指定文件夹，生成清晰的文件树结构，并将结果复制到系统剪贴板中、配合不忙脚本盒子可实现右键、快捷键启动"
+version = "1.0.0"
+icon = "./imgs/tree.png"
+
+[bmscriptsbox.runtime]
+language = "powershell"
+language_version = ">=5.1"
+entry = "FileTree.ps1"
+terminal = "never"
+
+[bmscriptsbox.triggers.context_menu]
+enabled = true
+targets = ["directory"]
+
+[bmscriptsbox.triggers.shortcut]
+enabled = true
+input_type = "folders"
+
+[[bmscriptsbox.inputs]]
+name = "target_paths"
+type = "paths"
